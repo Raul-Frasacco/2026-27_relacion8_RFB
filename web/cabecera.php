@@ -31,17 +31,17 @@ include(RUTABASE."/aplicacion/plantilla/plantilla.php");
 
 //creo todos los objetos que necesita mi aplicación
 const COLORESTEXTO = [
-  [ "Rojo", "Red" ],
-  [ "Azul", "Blue" ],
-  [ "Verde", "Green" ],
-  [ "Amarillo", "Yellow"],
-  [ "Negro", "Black" ]
+  "Rojo" => "Red" ,
+  "Azul" => "Blue" ,
+  "Verde" => "Green" ,
+  "Amarillo" => "Yellow",
+  "Negro" => "Black"
 ];
 
 const COLORESFONDO = [
-  [ "Rojo", "Red" ],
-  [ "Azul", "Blue" ],
-  [ "Verde", "Green" ],
-  [ "Amarillo", "Yellow"],
-  [ "Negro", "Black" ]
+  "Rojo" => "Red" ,
+  "Azul" => "Blue" ,
+  "Verde" => "Green" ,
+  "Amarillo" => "Yellow",
+  "Negro" => "Black"
 ];
