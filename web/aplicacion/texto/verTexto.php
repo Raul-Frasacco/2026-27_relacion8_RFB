@@ -2,13 +2,21 @@
 include_once(dirname(__FILE__) ."../../../cabecera.php");
 include_once(dirname(__FILE__) ."/../clases/RegistroTexto.php");
 
-$arrayTextos = [];
+session_start();
 
-if(isset($_POST["añadir"])){
-    $texto = $_POST["texto"];
-    $arrayTextos = new RegistroTexto($texto);
+
+if (!isset($_SESSION["textos"])) {
+    $_SESSION["textos"] = [];
 }
 
+
+if (isset($_POST["añadir"])) {
+    $texto = $_POST["texto"];
+    $_SESSION["textos"][] = new RegistroTexto($texto);
+
+    header("Location: " . $_SERVER["PHP_SELF"]);
+    exit();
+}
 //controlador
 $barraUbi = [
     [
@@ -58,7 +66,12 @@ function formulario(){
     <input type="text" name="texto"><br>
     <button name="añadir">Añadir</button>
     <br>
-    <textarea name="" id=""></textarea>
+    <textarea name="" id="" rows="10" cols="50"><?php
+        foreach($_SESSION["textos"] as $item){
+            echo "'$item'" . PHP_EOL;
+        }
+        ?>
+    </textarea>
     </form>
 <?php
 }
